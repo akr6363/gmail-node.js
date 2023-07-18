@@ -3,7 +3,7 @@ const express = require('express')
 const cors = require('cors');
 const bodyParser = require('body-parser')
 const app = express()
-const port = 3010
+const port = process.env.PORT || 3010
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -46,11 +46,10 @@ const {email, name, message} = req.body
     res.send(req.body);
 })
 
-const startApp = async () => {
+
     app.listen(port, () => {
         console.log(`Example app listening on port ${port}`)
     })
-}
 
-startApp()
+
 
