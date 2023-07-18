@@ -46,6 +46,11 @@ const {email, name, message} = req.body
     res.send(req.body);
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+const startApp = async () => {
+    app.listen(port, () => {
+        console.log(`Example app listening on port ${port}`)
+    })
+}
+
+startApp()
+
